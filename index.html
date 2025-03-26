@@ -19,7 +19,7 @@
             <a href="#">Process</a>
             <a href="#">Team</a>
         </nav>
-        <button class="get-started">Get Started</button>
+        <button class="get-started" onclick="window.open('https://forms.gle/1pFsk1CGFN9BG3Q1A', '_blank')">Get Started</button>
     </header>
     <div class="header-divider"></div>
     <main>
@@ -33,13 +33,109 @@
             </div>
             
             <div class="cta-button">
-                <button class="talk-button">Let's talk</button>
+                <button class="talk-button"  onclick="window.open('https://forms.gle/1pFsk1CGFN9BG3Q1A', '_blank')">Let's talk</button>
                 <div class="phone-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
                 </div>
             </div>
+        </section>
+        <section>
+<div class="chat-icon" onclick="toggleChat()">
+    <img 
+      src="https://example.com/chat-icon.png" 
+      alt="Chat"
+      class="chat-icon-image"
+      data-closed= "https://cdn-icons-png.flaticon.com/512/134/134914.png"
+      data-open = "https://cdn-icons-png.flaticon.com/512/271/271210.png"
+    >
+  </div>
+  
+  <!-- Chat window -->
+  <div class="chat-window" id="chatWindow">
+    <iframe 
+      id="streamlitFrame" 
+      src="http://localhost:8501/" 
+      style="width: 100%; height: 500px; border: none;"
+    ></iframe>
+  </div>
+  
+  <style>
+    .chat-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #9ccfcd;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      border: 1px solid black;
+    }
+  
+    .chat-icon:hover {
+      transform: scale(1.06);
+    }
+  
+    .chat-icon-image {
+      width: 34px;
+      height: 30px;
+      object-fit: contain;
+      transition: all 0.3s ease;
+      padding-top: 5px;
+    }
+  
+    .chat-window {
+      display: none;
+      position: fixed;
+      bottom: 104px;
+      right: 23px;
+      width: 389px;
+      height: 500px;
+      background: white;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+  
+    @media (max-width: 768px) {
+      .chat-window {
+        bottom: 0;
+        right: 0;
+        width: 100% !important;
+        height: 100vh !important;
+      }
+  
+      .chat-icon {
+        bottom: 10px;
+        right: 10px;
+        padding: 12px;
+      }
+    }
+  </style>
+  
+  <script>
+    function toggleChat() {
+      const chatWindow = document.getElementById('chatWindow');
+      const chatIcon = document.querySelector('.chat-icon-image');
+      const isOpen = chatWindow.style.display === 'block';
+  
+      chatWindow.style.display = isOpen ? 'none' : 'block';
+      
+      chatIcon.src = isOpen 
+        ? chatIcon.dataset.closed 
+        : chatIcon.dataset.open;
+  
+      if (window.innerWidth <= 768) {
+        chatWindow.style.width = '100%';
+        chatWindow.style.height = '100vh';
+        chatWindow.style.bottom = '0';
+        chatWindow.style.right = '0';
+      }
+    }
+  </script>
         </section>
         <section class="services">
             <h2 class="services-title">Our Services</h2>
@@ -48,7 +144,6 @@
             </p>
 
             <div class="services-grid">
-                <!-- Chatbot Development Card -->
                 <div class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +162,7 @@
                         <li>- voice bots</li>
                         <li>- custom solutions</li>
                     </ul>
-                    <button class="discover-button" id = "discover-button-1">Discover more</button>
+                    <button class="discover-button" id = "discover-button-1"  onclick="window.open('https://forms.gle/1pFsk1CGFN9BG3Q1A', '_blank')">Discover more</button>
                 </div>
 
                 <!-- Workflow Automations Card -->  
@@ -90,7 +185,7 @@
                         <li>- natural language to SQL</li>
                         <li>- custom solutions</li>
                     </ul>
-                    <button class="discover-button">Discover more</button>
+                    <button class="discover-button"  onclick="window.open('https://forms.gle/1pFsk1CGFN9BG3Q1A', '_blank')">Discover more</button>
                 </div>
 
                 <!-- Individual Consulting Card -->
@@ -112,7 +207,7 @@
                         <li>- Identifying Use Cases</li>
                         <li>- Coaching for AI Agency Owners</li>    
                     </ul>
-                    <button class="discover-button" id = "discover-button-3">Discover more</button>
+                    <button class="discover-button" id = "discover-button-3"  onclick="window.open('https://forms.gle/1pFsk1CGFN9BG3Q1A', '_blank')">Discover more</button>
                 </div>
             </div>
         </section>
