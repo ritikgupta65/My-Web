@@ -557,7 +557,8 @@ footer {
 
 @media (max-width: 768px) {
     .book-call-button{
-        margin-right: -9em;
+        padding-right: 2em;
+        margin-left: 245px;
     }
     .hero-title {
         font-size: 48px;
@@ -584,5 +585,8 @@ footer {
     }
     .section-title, .questions-title {
         font-size: 36px;
+    }
+    .contact-button{
+        margin-left: 200px;
     }
 }
