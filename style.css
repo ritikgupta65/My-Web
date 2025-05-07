@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #cdf7fa; 
-    color: #000;
+    background: linear-gradient(to bottom, #9ccfcd 0%, #dbf4f3 28%, #dbf4f3 75%  , #9ccfcd 100%);
+     color: #000;
     min-height: 100vh;
 }
 
@@ -61,6 +61,9 @@ nav a {
     padding: 12px 24px;
     font-size: 16px;
     cursor: pointer;
+}
+.get-started:hover {
+    background-color: #272626;
 }
 
 main {
@@ -134,6 +137,9 @@ main {
     font-size: 16px;
     cursor: pointer;
 }
+.talk-button:hover {
+    background-color: #272626;
+}
 
 .phone-icon {
     background-color: #9ccfcd;
@@ -183,8 +189,12 @@ main {
     padding: 30px;
     width: 350px;
     text-align: left;
+    transition: transform 0.3s ease;
 }
 
+.service-card:hover {
+    transform: scale(1.02);  
+}
 .service-icon {
     width: 50px;
     height: 50px;
@@ -223,6 +233,9 @@ main {
     width: 100%;
     text-align: center;
 }
+.discover-button:hover {
+    background-color: #272626;
+}
 
 .process {
     max-width: 1000px;
@@ -258,6 +271,9 @@ main {
     margin-left: 28em;
     margin-top: 2em;
 }
+.book-call-button:hover {
+    background-color: #272626 ;
+}
 
 .process-steps {
     display: flex;
@@ -269,8 +285,11 @@ main {
 .process-step {
     flex: 1;
     min-width: 250px;
+    transition: transform ease 0.3s;
 }
-
+.process-step:hover {
+    transform: scale(1.02);  
+}
 .step-number {
     background-color: #cdf7fa;
     width: 50px;
@@ -424,6 +443,9 @@ main {
     cursor: pointer;
     margin-left: 24em;
 }
+.contact-button:hover {
+    background-color: #272626;
+}
 
 .contact-icon {
     background-color: #cdf7fa;
@@ -558,7 +580,7 @@ footer {
 @media (max-width: 768px) {
     .book-call-button{
         padding-right: 2em;
-        margin-left: 245px;
+        margin-left: 84px;
     }
     .hero-title {
         font-size: 48px;
@@ -587,6 +609,16 @@ footer {
         font-size: 36px;
     }
     .contact-button{
-        margin-left: 200px;
+        margin-left: 26px;
     }
+    .process-intro {
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.6;
+        max-width: 800px;
+        margin-left: 6px;
+    }    
 }
+html {
+    scroll-behavior: smooth;
+  }
